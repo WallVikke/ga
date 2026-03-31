@@ -7,7 +7,6 @@ function App() {
         <>
             <Header></Header>
             <Home></Home>
-
             <LoginForm></LoginForm>
             <RegisterForm></RegisterForm>
             <Cars></Cars>
@@ -24,10 +23,25 @@ function App() {
 }
 
 function Home() {
+     
 
     return (
-        <div className="content" id="home">
-            <h2>HOME</h2>
+        <div className="content"  id="home">
+            <h2>            Welcome to Blue Horizon Cars – The Ultimate Luxury Car Showcase</h2>
+            <p className="text">
+
+
+            At Blue Horizon Cars, we celebrate the art of automotive excellence. Our showroom isn’t about sales—it’s about experiences. Every vehicle tells a story, every curve and contour reflects masterful design, engineering, and pure passion for luxury cars. From sleek supercars to sophisticated sedans, our collection represents the pinnacle of automotive craftsmanship and innovation.
+
+            Step inside and explore a curated selection of the world’s most prestigious brands. Marvel at the aerodynamic lines of a Ferrari, the commanding presence of a Rolls-Royce, or the futuristic elegance of a Tesla Roadster. Each car is displayed to highlight its unique features, materials, and cutting-edge technology.
+
+            Blue Horizon Cars is designed for enthusiasts, collectors, and dreamers alike. Whether you’re an automotive aficionado seeking inspiration, a designer admiring trends in vehicle aesthetics, or simply captivated by luxury, our showroom immerses you in a world where cars are more than machines—they are works of art.
+
+            We host exclusive viewing events, virtual tours, and immersive multimedia experiences, allowing visitors to fully appreciate the beauty, power, and sophistication of each vehicle. Our knowledgeable staff are on hand to provide detailed insights, share stories about the history of the brands, and guide you through the craftsmanship that makes each car exceptional.
+
+            At Blue Horizon Cars, we don’t sell cars—we celebrate them. Our mission is to create a space where automotive excellence can be admired, studied, and enjoyed. It’s a place to dream, to explore, and to experience the thrill of luxury automobiles in their purest form.
+
+            Discover Blue Horizon Cars and let the finest vehicles inspire your imagination. Luxury, performance, and elegance await—without ever leaving the showroom.</p>
         </div>
 
     )
@@ -53,7 +67,7 @@ function Cars() {
 
     return (
         <div className="content" id="cars">
-            <h2>Cars</h2>
+            
 
             {cars.map(c => <Car setCars={setCars} car = {c} key = {c.id}></Car> )}
             <hr />
@@ -84,6 +98,25 @@ function Car({car, setCars}) {
 
     }
 
+    async function likeCar() {
+    const data = new FormData();
+    data.append("id", car.id);
+
+    const res = await fetch("./cars/like", {
+        method: "POST",
+        body: data
+    });
+
+    const json = await res.json();
+
+    if (!json.success) {
+        alert(json.message);
+        return;
+    }
+
+    setCars(prev => prev.map(c => c.id === car.id ? json.data : c));
+ }
+
    
 
     const [edit, setEdit] = React.useState(false);
@@ -96,19 +129,25 @@ function Car({car, setCars}) {
             <p>{car.model}</p>
             <p>{car.price}</p>
             <button onClick={()=>setEdit(prev => !prev)}>EDIT</button>
-            <a href={`./cars/delete/${car.id}`} onClick = {delCar}>Delete</a>
+            <a href={`./cars/delete/${car.id}`} onClick = {delCar}>DELETE</a>
+            <button onClick={likeCar}>❤️ ({Object.keys(car.likes || {}).length})
+</button>
 
           {edit ?  <Edit setEdit={setEdit} car = {car} setCars={setCars}></Edit>: ""}
         </div>
     )
 }
 
-
 function Header() {
-    return (
 
+
+
+
+    
+    return (
+            
         <header>
-            <h1>Viktors Gymnasiearbete</h1>
+            <h1>Blue Horizon Cars</h1>
 
             <nav>
                 <a href="http://localhost/vvga/#home">Home</a>
@@ -157,7 +196,6 @@ function Create({ setCars }) {
                 <input type="submit" value="Create" />
             </form>
 
-            {JSON.stringify(response)}
         </div>
 
 
@@ -183,7 +221,6 @@ function LoginForm() {
                 <button type="submit">Logga in</button>
             </form>
 
-            <a href="http://localhost/vvga/register-form">Skapa konto</a>
         </div>
 
     )
@@ -200,8 +237,6 @@ function RegisterForm() {
                 <input type="password" name="password" placeholder="Lösenord" required />
                 <button type="submit">Registrera</button>
             </form>
-
-            <a href="http://localhost/vvga/login-form">Logga in</a>
         </div>
     )
 }
@@ -223,16 +258,16 @@ function Edit({car, setCars, setEdit}){
 
         const data = await res.json();
 
-        if(!data.success) return setMes("Error");
+        if(!data.success) return setMes("Not Admin");
 
-        const {brand, model, price} = data.data;
+        const {brand, model, price, image} = data.data;
         setEdit(prev=>!prev)
 
         setCars(prev=>{
             return prev.map(c=>{
 
                 if(c.id != car.id) return c
-                return {...c, brand, model, price }
+                return {...c, brand, model, price, image }
             })
 
         })
@@ -256,7 +291,7 @@ function Edit({car, setCars, setEdit}){
         <input type="text" name="brand" defaultValue={car.brand} />
         <input type="text" name="model" defaultValue={car.model} />
         <input type="text" name="price" defaultValue={car.price} />
-
+        <input type="text" name="image" defaultValue={car.image} />
         <input type="submit" value="Update" />
       </form>
         <h2>{mes}</h2>

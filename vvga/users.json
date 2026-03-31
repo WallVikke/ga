@@ -6,15 +6,21 @@
         "role": "admin"
     },
     {
-        "id": "user_69831d4ab77582.97001316",
-        "username": "wallvikke@hotmail.com",
-        "password": "$2y$10$Itm0ETa8umrpoUMmArym.O00lHwHNt0tJsSA1pyFRrPRan\/N9BA02",
+        "id": "user_69c3bf427b7928.13615578",
+        "username": "Visitor",
+        "password": "$2y$10$50s0AB7b.jvUYRhhcnuYVeC1Ws1SxGcrz.L2\/yPXX6.bc6\/PFVmha",
         "role": "visitor"
     },
     {
-        "id": "user_69a8122a7e66e5.38973575",
-        "username": "dero11114",
-        "password": "$2y$10$3AEdfDxgt70SV1rzfG0EEesEjaFQE9B65H9aLkP4tkfLpIMLY1weq",
+        "id": "user_69c3c57c412b96.69964035",
+        "username": "Visitor2",
+        "password": "$2y$10$dBknRWI8nus5XGph6M3O3u0gjnKF2ENVlimtGqaJSg4Z1Yyuhvm8q",
+        "role": "visitor"
+    },
+    {
+        "id": "user_69c3cbe0582272.14140712",
+        "username": "Visitor3",
+        "password": "$2y$10$p6uEDUsLQmBvGaxnJDjVUuGw\/mo.n7txPacFcfpIs253WqPyUFsCm",
         "role": "visitor"
     }
 ]

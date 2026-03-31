@@ -31,7 +31,21 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     padding: 20px 40px;
+
+    display: flex;
+    flex-direction: column;   /* stack title + nav */
+    align-items: center;      /* center horizontally */
+    gap: 15px;                /* spacing between h1 and nav */
 }
+
+header nav {
+    display: flex;
+    gap: 30px;                /* spacing between links */
+}
+
+
+
+
 
 header h1 {
     color: white;
@@ -293,8 +307,134 @@ hr {
 }
 .cars img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  max-width: 300px;   /* controls how big it can get */
+  height: auto;       /* keeps proportions */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
   border-radius: 10px;
-  margin-bottom: 10px;
+}
+/* ===== Center EDIT button and DELETE link safely ===== */
+.cars {
+    text-align: center; /* centers inline/inline-block children */
+}
+
+.cars button,
+.cars a {
+    margin-left: 5px;   /* small gap between buttons */
+    margin-right: 5px;
+    margin-top: 10px;   /* spacing from content above */
+}
+/* ===== Make EDIT and DELETE full-width inside cars ===== */
+.cars button,
+.cars a {
+    display: block;           /* full-width block */
+    width: 100%;              /* fill card width */
+    margin: 10px 0 0 0;       /* vertical spacing */
+    text-align: center;       /* center text inside the button/link */
+}
+h2{
+    padding: 20px;
+    text-align: center;
+}
+/* ===== Modern Readable Text ===== */
+.text {
+    max-width: 800px;           /* keeps lines from being too long */
+    margin: 40px auto;           /* center horizontally with space around */
+    padding: 20px;               /* breathing room inside the container */
+    font-size: 1.1rem;           /* readable but modern */
+    line-height: 1.7;            /* easy on the eyes */
+    color: #e5e7eb;              /* soft white/light gray text */
+    border-radius: 16px;         /* modern rounded corners */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3); /* soft depth effect */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    text-align: justify;          /* modern justified text, avoids stuck-left look */
+    backdrop-filter: blur(8px);   /* glassy effect if background visible */
+}
+
+h1 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  /* neon blue gradient */
+  background: linear-gradient(135deg, #5ecbff, #9be8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* neon glow */
+  text-shadow:
+    0 0 8px rgba(94, 203, 255, 0.7),
+    0 0 16px rgba(94, 203, 255, 0.5),
+    0 0 32px rgba(94, 203, 255, 0.3);
+
+  margin: 0.5rem 0;
+}
+
+
+.cars p:last-of-type {
+  color: #7fd1ff;
+  font-weight: 700;
+  text-shadow:
+    0 0 6px rgba(127, 209, 255, 0.8),
+    0 0 12px rgba(127, 209, 255, 0.6),
+    0 0 24px rgba(127, 209, 255, 0.4);
+}
+
+.cars p:last-of-type::after {
+  content: "kr";
+  margin-left: 4px;
+  color: #7fd1ff;
+  font-weight: 700;
+  text-shadow:
+    0 0 6px rgba(127, 209, 255, 0.8),
+    0 0 12px rgba(127, 209, 255, 0.6),
+    0 0 24px rgba(127, 209, 255, 0.4);
+}
+.cars h3 {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 24px rgba(255, 255, 255, 0.4);
+}
+.cars p:first-of-type {
+  color: #4dff88;
+  font-weight: 700;
+  text-shadow:
+    0 0 6px rgba(77, 255, 136, 0.8),
+    0 0 12px rgba(77, 255, 136, 0.6),
+    0 0 24px rgba(77, 255, 136, 0.4);
+}
+nav a[href*="logout"] {
+    background: #e63946;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+
+    /* Animation */
+    transition: 0.25s ease;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+
+    /* Right edge alignment + upward shift */
+    margin-left: auto;
+    position: relative;
+    top: -4px;
+
+    /* Required so nav items align properly */
+    display: inline-flex;
+}
+
+/* Hover effect combined with same selector */
+nav a[href*="logout"]:hover {
+    background: #c72534;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 14px rgba(0,0,0,0.22);
 }
