@@ -1,0 +1,56 @@
+[
+    {
+        "id": "169c2751a1f130",
+        "brand": "Bmw",
+        "model": "M5",
+        "price": 700000,
+        "image": "https:\/\/hips.hearstapps.com\/hmg-prod\/images\/2025-bmw-m5-115-671a7a8e94c11.jpg?crop=0.744xw:0.630xh;0.128xw,0.267xh&resize=1200:*",
+        "likes": {
+            "user_69c3bf427b7928.13615578": true,
+            "user_69c3c57c412b96.69964035": true,
+            "user_69c3cbe0582272.14140712": true
+        }
+    },
+    {
+        "id": "169c3be211b63d",
+        "brand": "Audi",
+        "model": "Rs5",
+        "price": 1500000,
+        "image": "https:\/\/cdn.starwebserver.se\/shops\/bilmode\/files\/635_grande.jpg",
+        "likes": {
+            "user_69c3bf427b7928.13615578": true,
+            "user_69c3c57c412b96.69964035": true,
+            "user_69c3cbe0582272.14140712": true
+        }
+    },
+    {
+        "id": "169c3cc6de794b",
+        "brand": "Mercedes",
+        "model": "S63 amg",
+        "price": "650000",
+        "image": "https:\/\/bilweb.se\/i?u=103194118&w=400&h=250&c=1",
+        "likes": {
+            "user_69c3bf427b7928.13615578": true
+        }
+    },
+    {
+        "id": "169c3cc9fad33a",
+        "brand": "Bmw",
+        "model": "M4 competition",
+        "price": "785500",
+        "image": "https:\/\/prod.cosy.bmw.cloud\/ministorene\/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS9P3AKWL2Jei2lOWgpn23HGfvQFV%255eqKSYpRl6swTHuLQ53RoIBeayVoGN6lVQjvqLFe0R23Ey2od0zuzH6CpLv6Fi55eqKCGZIaSATNF1bQmSA6eiifGeKhimJ0HWp7QFe0CcgGQv7Gq6z28WhcKYiWkP05kyVAf4bLswTZ2M6djrtClifG7QLl5w8jCzgautE6tnSFT3Id4IDsMGBDFzf3D%25DxDr0dnkq8qTszOALULuckIFJGJOOABKupUBQFeWS6GwBKMPVYps5WhbNm6MIPo90yYw6bHi4Tmt49%25wc3y7DiftxdIXCw178zBTrtECUkebX7slGAM6CCrXpFhYSlZQ6KCwfXRaYWltZQ5nmPX5EagOybQg7nvIT9atSO2B3in76IjedwOE2BDMztIc0eqhk7BxvMLoACe5WhJHFlMWFou%25KXhEBHSfWQovD%25V1Pa7VLfNEbnC5V10s9OleZE4riIXUiscZwBQGCrxRteapxZ857MnskRUgChOrN5Gvloqfcgp2XHLVGv6jQ%25JTZ2YDafu3bjmqn1SdiDyLOEVtpqTJIsNjqL3uBr0NMJdSeZ4btuzVMRcNySkNh5x6iVA0og8cZNF4HviRx0Kc%252wdd4WxfjtOccP81D7wGxbUEqCro89GsLGdUUiprJpqMGw6Zu6QeptYRSYNO67m5Vm0EYCygNy7HmlTv0TCmyX3243eATQdjcdM43aJnWSMYrb4gFR",
+        "likes": {
+            "user_69c3bf427b7928.13615578": true
+        }
+    },
+    {
+        "id": "169c3ccea01608",
+        "brand": "Audi",
+        "model": "Rs3",
+        "price": "465300",
+        "image": "https:\/\/www.abt-sportsline.com\/fileadmin\/abt-sportsline\/Modelle\/Limited_Editions\/RS3-R_2025\/ABT-Tuning_RS3-R-Sportback_Front-seitlich-oben.jpg",
+        "likes": {
+            "user_69c3bf427b7928.13615578": true
+        }
+    }
+]
